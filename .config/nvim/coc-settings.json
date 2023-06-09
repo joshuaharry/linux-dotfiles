@@ -1,0 +1,5 @@
+{
+  "suggest.autoTrigger": "none",
+  "inlayHint.enable": false,
+  "solargraph.formatting": true
+}

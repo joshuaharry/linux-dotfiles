@@ -1,0 +1,2 @@
+#!/bin/sh
+brightnessctl | grep -oP '\d+?%'
