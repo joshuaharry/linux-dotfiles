@@ -39,7 +39,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "windwp/nvim-autopairs",
+  "cohama/lexima.vim",
   {
     "neoclide/coc.nvim",
     branch = "master",
@@ -57,8 +57,6 @@ require("lazy").setup({
   "Olical/conjure",
   'dcampos/nvim-snippy'
 })
-
-require("nvim-autopairs").setup{}
 
 require('snippy').setup({
     mappings = {

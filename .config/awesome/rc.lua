@@ -55,7 +55,7 @@ theme = gears.filesystem.get_configuration_dir() .. "theme.lua"
 beautiful.init(theme)
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm fish"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 browser = "google-chrome-stable"
