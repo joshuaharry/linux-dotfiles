@@ -55,7 +55,8 @@ require("lazy").setup({
   "AlphaTechnolog/pywal.nvim",
   "nvim-treesitter/nvim-treesitter",
   "Olical/conjure",
-  'dcampos/nvim-snippy'
+  'dcampos/nvim-snippy',
+  "NLKNguyen/papercolor-theme",
 })
 
 require('snippy').setup({
@@ -93,5 +94,7 @@ vim.cmd('inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : coc
 vim.cmd("highlight Visual cterm=NONE ctermbg=255")
 vim.cmd [[
   inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+  set background=light
+  colorscheme PaperColor
 ]]
 
