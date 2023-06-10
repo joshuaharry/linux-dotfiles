@@ -2,7 +2,6 @@ if status is-interactive
     fish_vi_key_bindings
     alias aliases='nvim ~/.config/fish/config.fish'
     alias c='clear -x'
-    alias cat='bat'
     alias clear='clear -x'
     alias dots='nvim ~/.config/misc/dotfiles.dots'
     alias e='exit'

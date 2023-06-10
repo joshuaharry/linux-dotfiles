@@ -17,4 +17,6 @@ export PATH="$HOME"/bin:\
 
 export ZDOTDIR="$HOME"/.config/zsh
 export N_PREFIX="$HOME"/.n
+eval "$(ssh-agent)"
+ssh-add ~/.ssh/github
 startx

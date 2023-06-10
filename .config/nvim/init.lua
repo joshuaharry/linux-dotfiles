@@ -55,9 +55,22 @@ require("lazy").setup({
   "AlphaTechnolog/pywal.nvim",
   "nvim-treesitter/nvim-treesitter",
   "Olical/conjure",
+  'dcampos/nvim-snippy'
 })
 
 require("nvim-autopairs").setup{}
+
+require('snippy').setup({
+    mappings = {
+        is = {
+            ['<Tab>'] = 'expand_or_advance',
+            ['<S-Tab>'] = 'previous',
+        },
+        nx = {
+            ['<leader>x'] = 'cut_text',
+        },
+    },
+})
 
 vim.g.closetag_filenames = '*.html,*.jsx,*.tsx,*.erb'
 
