@@ -39,7 +39,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "cohama/lexima.vim",
+  "windwp/nvim-autopairs",
   {
     "neoclide/coc.nvim",
     branch = "master",
@@ -70,6 +70,10 @@ require('snippy').setup({
     },
 })
 
+require('nvim-autopairs').setup{
+  map_cr = false,
+}
+
 vim.g.closetag_filenames = '*.html,*.jsx,*.tsx,*.erb'
 
 nnoremap("<leader>p", ":call CocAction('format')<CR>")
@@ -86,5 +90,8 @@ vim.cmd('nmap <silent> gy <Plug>(coc-type-definition)')
 vim.cmd('nmap <silent> gi <Plug>(coc-implementation)')
 vim.cmd('nmap <silent> gr <Plug>(coc-references)')
 vim.cmd('inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : coc#refresh()')
-vim.cmd('inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "<C-g>u<CR><c-r>=coc#on_enter()<CR>"')
 vim.cmd("highlight Visual cterm=NONE ctermbg=255")
+vim.cmd [[
+  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+]]
+
