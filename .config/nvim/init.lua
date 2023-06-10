@@ -72,7 +72,7 @@ require('snippy').setup({
 })
 
 require('nvim-autopairs').setup{
-  map_cr = false,
+  map_cr = true,
 }
 
 vim.g.closetag_filenames = '*.html,*.jsx,*.tsx,*.erb'
@@ -80,21 +80,16 @@ vim.g.closetag_filenames = '*.html,*.jsx,*.tsx,*.erb'
 nnoremap("<leader>p", ":call CocAction('format')<CR>")
 
 vim.cmd [[
-nnoremap <leader>sf <cmd>Telescope find_files<cr>
-nnoremap <leader>sg <cmd>Telescope live_grep<cr>
-nnoremap <leader>sb <cmd>Telescope buffers<cr>
-nnoremap <leader>sh <cmd>Telescope help_tags<cr>
-]]
-
-vim.cmd('nmap <silent> gd <Plug>(coc-definition)')
-vim.cmd('nmap <silent> gy <Plug>(coc-type-definition)')
-vim.cmd('nmap <silent> gi <Plug>(coc-implementation)')
-vim.cmd('nmap <silent> gr <Plug>(coc-references)')
-vim.cmd('inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : coc#refresh()')
-vim.cmd("highlight Visual cterm=NONE ctermbg=255")
-vim.cmd [[
-  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+  nnoremap <leader>sf <cmd>Telescope find_files<cr>
+  nnoremap <leader>sg <cmd>Telescope live_grep<cr>
+  nnoremap <leader>sb <cmd>Telescope buffers<cr>
+  nnoremap <leader>sh <cmd>Telescope help_tags<cr>
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+  inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : coc#refresh()
+  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : v:lua.MPairs.completion_confirm()
   set background=light
   colorscheme PaperColor
 ]]
-
