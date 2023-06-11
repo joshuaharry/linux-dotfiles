@@ -57,6 +57,8 @@ require("lazy").setup({
   "Olical/conjure",
   'dcampos/nvim-snippy',
   "NLKNguyen/papercolor-theme",
+  "tpope/vim-commentary",
+  "prisma/vim-prisma"
 })
 
 require('snippy').setup({
