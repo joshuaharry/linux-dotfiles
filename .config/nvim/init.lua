@@ -32,7 +32,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -40,12 +40,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "windwp/nvim-autopairs",
+  "windwp/nvim-ts-autotag",
   {
     "neoclide/coc.nvim",
     branch = "master",
     build = "yarn install --frozen-lockfile",
   },
-  "alvan/vim-closetag",
   "HerringtonDarkholme/yats.vim",
   {
     'nvim-telescope/telescope.nvim', 
@@ -55,10 +55,11 @@ require("lazy").setup({
   "AlphaTechnolog/pywal.nvim",
   "nvim-treesitter/nvim-treesitter",
   "Olical/conjure",
-  'dcampos/nvim-snippy',
+  "dcampos/nvim-snippy",
   "NLKNguyen/papercolor-theme",
   "tpope/vim-commentary",
-  "prisma/vim-prisma"
+  "prisma/vim-prisma",
+  "evanleck/vim-svelte"
 })
 
 require('snippy').setup({
@@ -77,7 +78,9 @@ require('nvim-autopairs').setup{
   map_cr = true,
 }
 
-vim.g.closetag_filenames = '*.html,*.jsx,*.tsx,*.erb'
+require('nvim-ts-autotag').setup({
+  filetypes = { "html" , "xml", "tsx", "ts", "js", "svelte" },
+})
 
 nnoremap("<leader>p", ":call CocAction('format')<CR>")
 
@@ -94,4 +97,5 @@ vim.cmd [[
   inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : v:lua.MPairs.completion_confirm()
   set background=light
   colorscheme PaperColor
+  TSEnable autotag
 ]]
